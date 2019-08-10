@@ -4,13 +4,25 @@
   "description": "console mini games",
   "main": "index.js",
   "bin": {
-    "brain-games": "src/bin/brain-games.js"
+    "brain-games": "dist/bin/brain-games.js"
   },
+  "engines": {
+    "node": ">=8"
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublishOnly": "npm run build"
   },
-  "author": "sergpvv",
-  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergpvv/frontend-project-lvl1.git"
+  },
+  "author": "Sergei P. Vinogradov",
+  "license": "",
   "devDependencies": {
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
