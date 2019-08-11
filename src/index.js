@@ -9,6 +9,7 @@ const greetUser = () => {
 };
 
 const playEven = (count = 3, min = 1, max = 100) => {
+  const username = greetUser();
   const right = { 0: 'yes', 1: 'no' };
   const playRound = (result, remain) => {
     if (remain === 0) { return result; }
@@ -20,11 +21,9 @@ const playEven = (count = 3, min = 1, max = 100) => {
       console.log('Correct!');
       return playRound(result, remain - 1);
     }
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.\nLet's try again, Bill!`);
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.\nLet's try again, ${username}!`);
     return playRound(false, remain - 1);
   };
-
-  const username = greetUser();
   if (playRound(true, count)) {
     console.log(`Congratulations, ${username}!`);
   }
