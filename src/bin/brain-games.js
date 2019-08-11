@@ -1,3 +1,5 @@
 #!/usr/bin/env node
 
-import index from '..';
+import greetUser from '..';
+
+greetUser();
