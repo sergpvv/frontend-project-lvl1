@@ -4,7 +4,8 @@
   "description": "console mini games",
   "main": "index.js",
   "bin": {
-    "brain-games": "dist/bin/brain-games.js"
+    "brain-games": "dist/bin/brain-games.js",
+    "brain-even": "dist/bin/brain-even.js"
   },
   "engines": {
     "node": ">=8"
@@ -22,7 +23,7 @@
     "url": "git+https://github.com/sergpvv/frontend-project-lvl1.git"
   },
   "author": "Sergei P. Vinogradov",
-  "license": "",
+  "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
