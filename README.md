@@ -15,4 +15,4 @@ $ make install
 ```sh
 $ brain-games
 ```
-[![asciicast](https://asciinema.org/a/OebVQ96sZMNK1JnFP1HK2k8O0.png)](https://asciinema.org/a/OebVQ96sZMNK1JnFP1HK2k8O0)
+[![asciicast](https://asciinema.org/a/QjHmMNiC6oHMTjLOkUlOcCFEQ.svg)](https://asciinema.org/a/QjHmMNiC6oHMTjLOkUlOcCFEQ)
