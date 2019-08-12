@@ -4,6 +4,9 @@ const [MIN, MAX] = [1, 99];
 
 export default {
   rules: 'Answer "yes" if number even otherwise answer "no".',
-  getQuestion: () => getRandom(MAX, MIN),
-  getRightAnswer: (question) => (question % 2 ? 'no' : 'yes'),
+  getQuestionAndRightAnswer: () => {
+    const question = getRandom(MAX, MIN);
+    const answer = question % 2 ? 'no' : 'yes';
+    return [question, answer];
+  },
 };

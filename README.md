@@ -13,6 +13,16 @@ $ make install
 ## Run
 
 ```sh
-$ brain-games
+$ brain-even
 ```
-[![asciicast](https://asciinema.org/a/QjHmMNiC6oHMTjLOkUlOcCFEQ.svg)](https://asciinema.org/a/QjHmMNiC6oHMTjLOkUlOcCFEQ)
+[![asciicast](https://asciinema.org/a/5Q2iJltWkfCZ0iz7F5wLe9Rkp.svg)](https://asciinema.org/a/5Q2iJltWkfCZ0iz7F5wLe9Rkp)
+
+```sh
+$ brain-calc
+```
+[![asciicast](https://asciinema.org/a/ZMr3JgZTyqy1GEoULAUWqbJWL.svg)](https://asciinema.org/a/ZMr3JgZTyqy1GEoULAUWqbJWL)
+
+```sh
+$ brain-gcd
+```
+[![asciicast](https://asciinema.org/a/RhNR2PxMtkWLgrVjtmKicSZll.svg)](https://asciinema.org/a/RhNR2PxMtkWLgrVjtmKicSZll)
