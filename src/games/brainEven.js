@@ -1,6 +1,6 @@
 import getRandom from '../getRandom';
 
-const [MIN, MAX] = [1, 99];
+const [MIN, MAX] = [1, 100];
 
 export default {
   rules: 'Answer "yes" if number even otherwise answer "no".',

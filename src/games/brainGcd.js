@@ -3,10 +3,10 @@ import getRandom from '../getRandom';
 const [MIN, MAX] = [1, 100];
 
 const getGcd = (a, b) => {
-  const g = a % b;
-  if (g === 0) return b;
-  if (g === a) return getGcd(b, a);
-  return getGcd(b, g);
+  const c = a % b;
+  if (c === 0) return b;
+  if (c === a) return getGcd(b, a);
+  return getGcd(b, c);
 };
 
 export default {
