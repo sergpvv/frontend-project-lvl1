@@ -10,10 +10,13 @@ const progression = {
     const begin = getRandom(max, min);
     const step = getRandom(max, min);
     const answerPosition = getRandom(length);
-    const getValue = (first, position) => String(first + position * step);
-    const question = [].fill(begin, 0, length)
-      .map(getValue).fill('..', answerPosition, answerPosition).join(' ');
-    const answer = getValue(begin, answerPosition);
+    const getValue = (first, position) => first + position * step;
+    const question = (new Array(length))
+      .fill(begin, 0, length)
+      .map(getValue)
+      .fill('..', answerPosition, answerPosition + 1)
+      .join(' ');
+    const answer = String(getValue(begin, answerPosition));
     return [question, answer];
   },
 };
