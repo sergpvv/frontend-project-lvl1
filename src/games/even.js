@@ -1,12 +1,16 @@
 import getRandom from '../getRandom';
 
-const [MIN, MAX] = [1, 100];
+import play from '..';
 
-export default {
+const [min, max] = [1, 100];
+
+const even = {
   rules: 'Answer "yes" if number even otherwise answer "no".',
   getQuestionAndRightAnswer: () => {
-    const question = getRandom(MAX, MIN);
+    const question = getRandom(max, min);
     const answer = question % 2 ? 'no' : 'yes';
     return [question, answer];
   },
 };
+
+export default () => play(even);

@@ -1,7 +1,10 @@
 import getRandom from '../getRandom';
 
-const OPS = ['+', '-', '*'];
-const [MIN, MAX] = [1, 99];
+import play from '..';
+
+const ops = ['+', '-', '*'];
+
+const [min, max] = [1, 100];
 
 const getAnswer = (a, b, o) => {
   switch (o) {
@@ -16,14 +19,16 @@ const getAnswer = (a, b, o) => {
   }
 };
 
-export default {
+const calc = {
   rules: 'What is the result of the expression?',
   getQuestionAndRightAnswer: () => {
-    const number1 = getRandom(MAX, MIN);
-    const number2 = getRandom(MAX, MIN);
-    const operation = OPS[getRandom(OPS.length)];
+    const number1 = getRandom(max, min);
+    const number2 = getRandom(max, min);
+    const operation = ops[getRandom(ops.length)];
     const question = `${number1} ${operation} ${number2}`;
-    const answer = `${getAnswer(number1, number2, operation)}`;
+    const answer = String(getAnswer(number1, number2, operation));
     return [question, answer];
   },
 };
+
+export default () => play(calc);
