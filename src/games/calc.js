@@ -1,4 +1,4 @@
-import getRandom from '../getRandom';
+import getRandom from '../utils';
 
 import play from '..';
 
@@ -19,16 +19,15 @@ const getAnswer = (a, b, o) => {
   }
 };
 
-const calc = {
-  rules: 'What is the result of the expression?',
-  getQuestionAndRightAnswer: () => {
-    const number1 = getRandom(max, min);
-    const number2 = getRandom(max, min);
-    const operation = ops[getRandom(ops.length)];
-    const question = `${number1} ${operation} ${number2}`;
-    const answer = String(getAnswer(number1, number2, operation));
-    return [question, answer];
-  },
+const description = 'What is the result of the expression?';
+
+const getQuestionAndRightAnswer = () => {
+  const number1 = getRandom(max, min);
+  const number2 = getRandom(max, min);
+  const operation = ops[getRandom(ops.length)];
+  const question = `${number1} ${operation} ${number2}`;
+  const answer = String(getAnswer(number1, number2, operation));
+  return [question, answer];
 };
 
-export default () => play(calc);
+export default () => play(description, getQuestionAndRightAnswer);

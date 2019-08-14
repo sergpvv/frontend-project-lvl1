@@ -1,10 +1,11 @@
-import getRandom from '../getRandom';
+import getRandom from '../utils';
 
 import play from '..';
 
-const [min, max] = [2, 3571];
+const [min, max] = [-100, 1000];
 
 const isPrime = (number) => {
+  if (number < 2) { return false; }
   const iter = (divisor) => {
     if (divisor > number / 2) { return true; }
     if (number % divisor === 0) { return false; }
@@ -13,14 +14,12 @@ const isPrime = (number) => {
   return iter(2);
 };
 
-const prime = {
-  rules: 'Answer "yes" if given number is prime. Otherwise answer "no".',
-  getQuestionAndRightAnswer: () => {
-    const number = getRandom(max, min);
-    const question = String(number);
-    const answer = isPrime(number) ? 'yes' : 'no';
-    return [question, answer];
-  },
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const getQuestionAndRightAnswer = () => {
+  const number = getRandom(max, min);
+  const question = String(number);
+  const answer = isPrime(number) ? 'yes' : 'no';
+  return [question, answer];
 };
 
-export default () => play(prime);
+export default () => play(description, getQuestionAndRightAnswer);
