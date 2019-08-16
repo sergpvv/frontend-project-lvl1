@@ -7,8 +7,8 @@ export default (description, getQuestionAndRightAnswer) => {
   console.log(description);
   const username = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${username}!`);
-  const playRound = (roundsRemains, allAnswersIsCorrect) => {
-    if (roundsRemains === 0) { return allAnswersIsCorrect; }
+  const playRound = (roundsRemains, prevAnswersCorrect) => {
+    if (roundsRemains === 0) { return prevAnswersCorrect; }
     const [question, rightAnswer] = getQuestionAndRightAnswer();
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
@@ -19,7 +19,8 @@ export default (description, getQuestionAndRightAnswer) => {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
       console.log(`Let's try again, ${username}!`);
     }
-    return playRound(roundsRemains - 1, allAnswersIsCorrect && answerIsCorrect);
+    const allAnswersCorrect = answerIsCorrect && prevAnswersCorrect;
+    return playRound(roundsRemains - 1, allAnswersCorrect);
   };
   const wereAllAnswersCorrect = playRound(roundsCount, true);
   if (wereAllAnswersCorrect) {
