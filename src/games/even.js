@@ -4,9 +4,9 @@ import play from '..';
 
 const [min, max] = [1, 100];
 
-const description = 'Answer "yes" if number even otherwise answer "no".';
-
 const isEven = (value) => value % 2 === 0;
+
+const description = 'Answer "yes" if number even otherwise answer "no".';
 
 const getQuestionAndRightAnswer = () => {
   const question = getRandom(max, min);
